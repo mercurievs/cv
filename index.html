@@ -4,257 +4,430 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Мукашов Тилек — CV</title>
+    <title>Tilek Mukashov — Fullstack Developer</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet" />
 </head>
 
 <body>
 
-    <!-- ===== HERO ===== -->
-    <header class="hero">
+    <!-- BG DECORATIONS -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow glow-1" aria-hidden="true"></div>
+    <div class="bg-glow glow-2" aria-hidden="true"></div>
+
+    <!-- ========= NAV ========= -->
+    <nav class="nav">
+        <span class="nav-logo">tm<span class="nav-cursor">_</span></span>
+        <ul class="nav-links">
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========= HERO ========= -->
+    <header class="hero" id="about">
         <div class="hero-inner">
-            <div class="avatar-wrap">
-                <div class="avatar-placeholder">ТМ</div>
+            <div class="hero-label">
+                <span class="dot dot--green"></span>
+                Available for work
             </div>
-            <div class="hero-text">
-                <h1>Мукашов Тилек</h1>
-                <p class="subtitle">Fullstack-разработчик · Студент группы П-23</p>
-                <p class="tagline">Разрабатываю веб-приложения, работаю с базами данных, строю системы с применением ИИ
-                </p>
-                <div class="badges">
-                    <span class="badge">Python</span>
-                    <span class="badge">JavaScript</span>
-                    <span class="badge">SQL</span>
-                    <span class="badge">React</span>
-                    <span class="badge">Django</span>
-                    <span class="badge">Git</span>
+            <h1 class="hero-name">
+                Tilek<br />
+                <span class="gradient-text">Mukashov</span>
+            </h1>
+            <p class="hero-role">
+                <span class="mono">&lt;</span>Fullstack Developer<span class="mono"> /&gt;</span>
+            </p>
+            <p class="hero-desc">
+                Создаю быстрые и красивые веб-приложения — от архитектуры базы данных до пиксельно точного UI.
+                Специализируюсь на Python·Django на бэкенде и JavaScript·React на фронте.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn--primary">Посмотреть проекты</a>
+                <a href="#contact" class="btn btn--ghost">Связаться</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num">5+</span>
+                    <span class="stat-label">Запущенных проектов</span>
                 </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">3+</span>
+                    <span class="stat-label">Года опыта</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">10+</span>
+                    <span class="stat-label">Технологий</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-code">
+            <div class="code-window">
+                <div class="code-topbar">
+                    <span class="code-dot red"></span>
+                    <span class="code-dot yellow"></span>
+                    <span class="code-dot green"></span>
+                    <span class="code-filename">tilek.py</span>
+                </div>
+                <pre class="code-body"><span class="kw">class</span> <span class="cl">Developer</span>:
+    name  <span class="op">=</span> <span class="str">"Tilek Mukashov"</span>
+    role  <span class="op">=</span> <span class="str">"Fullstack Developer"</span>
+    city  <span class="op">=</span> <span class="str">"Bishkek, KG"</span>
+
+    skills <span class="op">=</span> [
+        <span class="str">"Python"</span>, <span class="str">"Django"</span>,
+        <span class="str">"JavaScript"</span>, <span class="str">"React"</span>,
+        <span class="str">"PostgreSQL"</span>, <span class="str">"REST API"</span>,
+    ]
+
+    <span class="kw">def</span> <span class="fn">build</span>(self, idea):
+        <span class="kw">return</span> idea <span class="op">+</span> <span class="str">" → production ✓"</span></pre>
             </div>
         </div>
     </header>
 
-    <main class="container">
-
-        <!-- ===== CONTACTS ===== -->
-        <section class="card contacts">
-            <div class="contact-item">
-                <span class="icon">✉</span>
-                <a href="mailto:tilek@example.com">tilek@example.com</a>
+    <!-- ========= PROJECTS ========= -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">/ projects</span>
+                <h2 class="section-title">Мои проекты</h2>
+                <p class="section-sub">Реальные продукты, которые я спроектировал, разработал и задеплоил</p>
             </div>
-            <div class="contact-item">
-                <span class="icon">🐙</span>
-                <a href="https://github.com/tilek-mukashov" target="_blank">github.com/tilek-mukashov</a>
-            </div>
-            <div class="contact-item">
-                <span class="icon">📍</span>
-                <span>Бишкек, Кыргызстан</span>
-            </div>
-        </section>
 
-        <div class="two-col">
+            <div class="projects-grid">
 
-            <!-- LEFT -->
-            <div class="col-left">
-
-                <!-- ABOUT -->
-                <section class="card">
-                    <h2 class="section-title">Обо мне</h2>
-                    <p>
-                        Студент специальности «Программная инженерия», группа П-23. Увлечён созданием
-                        веб‑приложений и автоматизацией процессов. Работаю в полном цикле разработки:
-                        от проектирования базы данных до деплоя готового продукта. Активно применяю
-                        инструменты ИИ в учебных и коммерческих проектах.
+                <article class="project-card featured">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">🎓</div>
+                        <div class="project-links">
+                            <a href="#" class="icon-btn" title="GitHub" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-name">Дипломная веб-платформа</h3>
+                    <p class="project-desc">
+                        Полноценная веб-платформа с ролевой системой пользователей, REST API и административной панелью.
+                        Спроектировал реляционную БД, реализовал JWT-аутентификацию и развернул приложение на сервере.
                     </p>
-                </section>
-
-                <!-- EDUCATION -->
-                <section class="card">
-                    <h2 class="section-title">Образование</h2>
-                    <div class="timeline-item">
-                        <div class="tl-dot"></div>
-                        <div class="tl-body">
-                            <strong>Бакалавриат — Программная инженерия</strong>
-                            <span class="tl-meta">2022 — 2026 · Кыргызстан</span>
-                            <p>Группа П-23 · Научный руководитель: Талант</p>
-                            <p>Выпускная квалификационная работа (ВКР) — 2026</p>
-                        </div>
+                    <div class="project-stack">
+                        <span>Python</span><span>Django</span><span>PostgreSQL</span><span>REST
+                            API</span><span>JWT</span>
                     </div>
-                </section>
-
-                <!-- SKILLS -->
-                <section class="card">
-                    <h2 class="section-title">Навыки</h2>
-
-                    <div class="skill-group">
-                        <h3>Языки программирования</h3>
-                        <div class="skill-list">
-                            <div class="skill-item"><span>Python</span>
-                                <div class="skill-bar">
-                                    <div class="skill-fill" style="width:90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item"><span>JavaScript</span>
-                                <div class="skill-bar">
-                                    <div class="skill-fill" style="width:80%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item"><span>SQL</span>
-                                <div class="skill-bar">
-                                    <div class="skill-fill" style="width:85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item"><span>HTML / CSS</span>
-                                <div class="skill-bar">
-                                    <div class="skill-fill" style="width:88%"></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="project-badges">
+                        <span class="badge-feat">⭐ Featured</span>
+                        <span class="badge-status live">● Live</span>
                     </div>
+                </article>
 
-                    <div class="skill-group">
-                        <h3>Фреймворки и инструменты</h3>
-                        <div class="tags">
-                            <span class="tag">Django</span>
-                            <span class="tag">React</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">SQLite</span>
-                            <span class="tag">Git / GitHub</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">REST API</span>
-                            <span class="tag">GitHub Pages</span>
-                            <span class="tag">VS Code</span>
-                        </div>
+                <article class="project-card">
+                    <div class="project-top">
+                        <div class="project-icon">🤖</div>
+                        <a href="#" class="icon-btn" title="GitHub" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
                     </div>
-
-                    <div class="skill-group">
-                        <h3>Языки общения</h3>
-                        <div class="tags">
-                            <span class="tag">Кыргызский — родной</span>
-                            <span class="tag">Русский — свободно</span>
-                            <span class="tag">Английский — B1</span>
-                        </div>
+                    <h3 class="project-name">AI-ассистент с LLM</h3>
+                    <p class="project-desc">
+                        Веб-приложение с интеграцией OpenAI API: чат-интерфейс, стриминг ответов, история диалогов.
+                        Серверная обработка промтов, управление контекстом и оптимизация токенов.
+                    </p>
+                    <div class="project-stack">
+                        <span>Python</span><span>Django</span><span>OpenAI
+                            API</span><span>JavaScript</span><span>WebSocket</span>
                     </div>
-                </section>
-
-            </div><!-- /col-left -->
-
-            <!-- RIGHT -->
-            <div class="col-right">
-
-                <!-- PROJECTS -->
-                <section class="card">
-                    <h2 class="section-title">Проекты</h2>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>ВКР — Дипломный проект</h3>
-                            <span class="project-date">2025 — 2026</span>
-                        </div>
-                        <p>
-                            Выпускная квалификационная работа, выполненная под руководством преподавателя Таланта.
-                            Полный цикл: анализ предметной области, проектирование БД, разработка серверной
-                            и клиентской части, документирование по ГОСТ.
-                        </p>
-                        <div class="project-tags">
-                            <span>Python</span><span>Django</span><span>PostgreSQL</span><span>REST API</span>
-                        </div>
+                    <div class="project-badges">
+                        <span class="badge-status live">● Live</span>
                     </div>
+                </article>
 
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Одностраничный сайт-портфолио / CV</h3>
-                            <span class="project-date">2026</span>
-                        </div>
-                        <p>
-                            Разработал персональный сайт-резюме с адаптивной вёрсткой, задеплоил на
-                            GitHub Pages. Использовал чистый HTML + CSS без сторонних фреймворков;
-                            настроил CI/CD через GitHub Actions.
-                        </p>
-                        <div class="project-tags">
-                            <span>HTML</span><span>CSS</span><span>GitHub Pages</span>
-                        </div>
+                <article class="project-card">
+                    <div class="project-top">
+                        <div class="project-icon">🛒</div>
+                        <a href="#" class="icon-btn" title="GitHub" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
                     </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Веб-приложение с ИИ-интеграцией</h3>
-                            <span class="project-date">2025</span>
-                        </div>
-                        <p>
-                            Проект с применением LLM-API (GitHub Copilot / OpenAI) для автоматизации задач.
-                            Разработал серверную часть на Django, спроектировал БД и реализовал REST-эндпоинты.
-                        </p>
-                        <div class="project-tags">
-                            <span>Python</span><span>Django</span><span>OpenAI API</span><span>REST API</span>
-                        </div>
+                    <h3 class="project-name">E-commerce платформа</h3>
+                    <p class="project-desc">
+                        Интернет-магазин с каталогом товаров, корзиной и управлением заказами.
+                        Фильтрация, поиск и пагинация через Django ORM и Ajax.
+                    </p>
+                    <div class="project-stack">
+                        <span>Django</span><span>SQLite</span><span>JavaScript</span><span>Ajax</span>
                     </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Учебные CRUD-приложения</h3>
-                            <span class="project-date">2023 — 2025</span>
-                        </div>
-                        <p>
-                            Серия учебных проектов: управление задачами, система учёта, каталог товаров.
-                            Освоил паттерны MVC/MVT, работу с ORM, аутентификацию пользователей.
-                        </p>
-                        <div class="project-tags">
-                            <span>Python</span><span>Django</span><span>SQLite</span><span>JavaScript</span>
-                        </div>
+                    <div class="project-badges">
+                        <span class="badge-status live">● Live</span>
                     </div>
+                </article>
 
-                </section>
+                <article class="project-card">
+                    <div class="project-top">
+                        <div class="project-icon">✅</div>
+                        <a href="#" class="icon-btn" title="GitHub" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <h3 class="project-name">Task Manager — Kanban</h3>
+                    <p class="project-desc">
+                        Командный таск-менеджер: создание задач, назначение исполнителей, дедлайны, Kanban-доска.
+                        Авторизация и разграничение прав через Django auth.
+                    </p>
+                    <div class="project-stack">
+                        <span>Python</span><span>Django</span><span>JavaScript</span><span>SQLite</span>
+                    </div>
+                    <div class="project-badges">
+                        <span class="badge-status wip">◐ In Progress</span>
+                    </div>
+                </article>
 
-                <!-- ACHIEVEMENTS -->
-                <section class="card">
-                    <h2 class="section-title">Достижения</h2>
-                    <ul class="achieve-list">
-                        <li>
-                            <span class="achieve-icon">🏅</span>
-                            <div>
-                                <strong>Участие в олимпиаде по программированию</strong>
-                                <p>Командное участие в соревнованиях по алгоритмическому программированию внутри
-                                    университета</p>
-                            </div>
+                <article class="project-card">
+                    <div class="project-top">
+                        <div class="project-icon">💼</div>
+                        <a href="#" class="icon-btn" title="GitHub" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <h3 class="project-name">Portfolio — этот сайт</h3>
+                    <p class="project-desc">
+                        Персональный сайт-портфолио с тёмным дизайном, glassmorphism-эффектами и CSS-анимациями.
+                        Без фреймворков — чистый HTML и CSS. Деплой через GitHub Pages.
+                    </p>
+                    <div class="project-stack">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>GitHub Pages</span>
+                    </div>
+                    <div class="project-badges">
+                        <span class="badge-status live">● Live</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= SKILLS ========= -->
+    <section class="section section--alt" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">/ skills</span>
+                <h2 class="section-title">Технический стек</h2>
+                <p class="section-sub">Технологии, с которыми я работаю каждый день</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-category">
+                    <h3><span class="skill-cat-icon">⚙️</span> Backend</h3>
+                    <ul>
+                        <li><span class="skill-name">Python</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:92%"></div>
+                            </div><span class="skill-pct">92%</span>
                         </li>
-                        <li>
-                            <span class="achieve-icon">📄</span>
-                            <div>
-                                <strong>Написание ВКР по ГОСТ</strong>
-                                <p>Полностью самостоятельное оформление дипломной работы в соответствии с
-                                    государственными стандартами</p>
-                            </div>
+                        <li><span class="skill-name">Django</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:88%"></div>
+                            </div><span class="skill-pct">88%</span>
                         </li>
-                        <li>
-                            <span class="achieve-icon">🤖</span>
-                            <div>
-                                <strong>Работа с ИИ-инструментами разработки</strong>
-                                <p>Уверенное использование GitHub Copilot и LLM в реальных проектах для ускорения
-                                    разработки</p>
-                            </div>
+                        <li><span class="skill-name">REST API</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:85%"></div>
+                            </div><span class="skill-pct">85%</span>
                         </li>
-                        <li>
-                            <span class="achieve-icon">🚀</span>
-                            <div>
-                                <strong>Деплой проектов в облако</strong>
-                                <p>Публикация приложений на GitHub Pages; опыт настройки CI/CD пайплайнов</p>
-                            </div>
+                        <li><span class="skill-name">PostgreSQL</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:82%"></div>
+                            </div><span class="skill-pct">82%</span>
                         </li>
                     </ul>
-                </section>
+                </div>
 
-            </div><!-- /col-right -->
+                <div class="skill-category">
+                    <h3><span class="skill-cat-icon">🎨</span> Frontend</h3>
+                    <ul>
+                        <li><span class="skill-name">HTML / CSS</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:90%"></div>
+                            </div><span class="skill-pct">90%</span>
+                        </li>
+                        <li><span class="skill-name">JavaScript</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:82%"></div>
+                            </div><span class="skill-pct">82%</span>
+                        </li>
+                        <li><span class="skill-name">React</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:72%"></div>
+                            </div><span class="skill-pct">72%</span>
+                        </li>
+                        <li><span class="skill-name">UI / Adaptive</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:88%"></div>
+                            </div><span class="skill-pct">88%</span>
+                        </li>
+                    </ul>
+                </div>
 
-        </div><!-- /two-col -->
+                <div class="skill-category">
+                    <h3><span class="skill-cat-icon">🛠️</span> Tools & DevOps</h3>
+                    <ul>
+                        <li><span class="skill-name">Git / GitHub</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:90%"></div>
+                            </div><span class="skill-pct">90%</span>
+                        </li>
+                        <li><span class="skill-name">Docker</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:65%"></div>
+                            </div><span class="skill-pct">65%</span>
+                        </li>
+                        <li><span class="skill-name">GitHub Pages / CI</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:80%"></div>
+                            </div><span class="skill-pct">80%</span>
+                        </li>
+                        <li><span class="skill-name">Linux / CLI</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--w:75%"></div>
+                            </div><span class="skill-pct">75%</span>
+                        </li>
+                    </ul>
+                </div>
 
-    </main>
+            </div>
 
+            <div class="tech-logos">
+                <div class="tech-item">
+                    <div class="tech-icon">🐍</div><span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🟢</div><span>Django</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🟡</div><span>JavaScript</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">⚛️</div><span>React</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🐘</div><span>PostgreSQL</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🔀</div><span>Git</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🐳</div><span>Docker</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🔌</div><span>REST API</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🐧</div><span>Linux</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🤖</div><span>OpenAI API</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========= CONTACT ========= -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">/ contact</span>
+                <h2 class="section-title">Давайте работать вместе</h2>
+                <p class="section-sub">Открыт для фриланса, full-time и интересных проектов</p>
+            </div>
+            <div class="contact-grid">
+                <a href="mailto:tilek@example.com" class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <p class="contact-type">Email</p>
+                        <p class="contact-value">tilek@example.com</p>
+                    </div>
+                </a>
+                <a href="https://github.com/tilek-mukashov" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon">🐙</div>
+                    <div>
+                        <p class="contact-type">GitHub</p>
+                        <p class="contact-value">github.com/tilek-mukashov</p>
+                    </div>
+                </a>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <p class="contact-type">Локация</p>
+                        <p class="contact-value">Бишкек, Кыргызстан</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= FOOTER ========= -->
     <footer class="footer">
-        <p>© 2026 Мукашов Тилек · Открыт к сотрудничеству и стажировкам</p>
+        <span class="mono">tilek.dev</span>
+        <span>© 2026 Tilek Mukashov</span>
+        <span>Built with ❤️ &amp; pure CSS</span>
     </footer>
+
+    <script>
+        // Animate skill bars on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.querySelectorAll('.bar-fill').forEach(b => b.classList.add('animate'));
+                }
+            });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('.skill-category').forEach(el => observer.observe(el));
+
+        // Nav active link
+        const sections = document.querySelectorAll('section[id], header[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(s => {
+                if (window.scrollY >= s.offsetTop - 80) current = s.id;
+            });
+            navLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+        }, { passive: true });
+
+        // Cursor blink
+        setInterval(() => {
+            const c = document.querySelector('.nav-cursor');
+            if (c) c.style.opacity = c.style.opacity === '0' ? '1' : '0';
+        }, 600);
+    </script>
 
 </body>
 
