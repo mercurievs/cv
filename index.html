@@ -8,427 +8,532 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
         rel="stylesheet" />
 </head>
 
 <body>
 
-    <!-- BG DECORATIONS -->
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-glow glow-1" aria-hidden="true"></div>
-    <div class="bg-glow glow-2" aria-hidden="true"></div>
+    <!-- CANVAS PARTICLES -->
+    <canvas id="stars"></canvas>
 
-    <!-- ========= NAV ========= -->
-    <nav class="nav">
-        <span class="nav-logo">tm<span class="nav-cursor">_</span></span>
+    <!-- CURSOR GLOW -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <a class="nav-logo" href="#hero">
+            <span class="logo-bracket">{</span>tm<span class="logo-bracket">}</span>
+        </a>
         <ul class="nav-links">
-            <li><a href="#about">Обо мне</a></li>
-            <li><a href="#projects">Проекты</a></li>
-            <li><a href="#skills">Навыки</a></li>
-            <li><a href="#contact">Контакты</a></li>
+            <li><a href="#hero" data-text="Главная">Главная</a></li>
+            <li><a href="#projects" data-text="Проекты">Проекты</a></li>
+            <li><a href="#skills" data-text="Навыки">Навыки</a></li>
+            <li><a href="#contact" data-text="Контакты">Контакты</a></li>
         </ul>
+        <a href="mailto:tilek@example.com" class="nav-cta">Hire me</a>
     </nav>
 
-    <!-- ========= HERO ========= -->
-    <header class="hero" id="about">
-        <div class="hero-inner">
-            <div class="hero-label">
-                <span class="dot dot--green"></span>
-                Available for work
-            </div>
-            <h1 class="hero-name">
-                Tilek<br />
-                <span class="gradient-text">Mukashov</span>
-            </h1>
-            <p class="hero-role">
-                <span class="mono">&lt;</span>Fullstack Developer<span class="mono"> /&gt;</span>
-            </p>
-            <p class="hero-desc">
-                Создаю быстрые и красивые веб-приложения — от архитектуры базы данных до пиксельно точного UI.
-                Специализируюсь на Python·Django на бэкенде и JavaScript·React на фронте.
-            </p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn--primary">Посмотреть проекты</a>
-                <a href="#contact" class="btn btn--ghost">Связаться</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-num">5+</span>
-                    <span class="stat-label">Запущенных проектов</span>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-text" aria-hidden="true">DEVELOPER</div>
+
+        <div class="hero-content">
+            <div class="hero-left reveal">
+                <div class="status-pill">
+                    <span class="pulse-ring"></span>
+                    <span class="pulse-dot"></span>
+                    Available for opportunities
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-num">3+</span>
-                    <span class="stat-label">Года опыта</span>
+
+                <h1 class="hero-heading">
+                    <span class="line-wrap"><span class="reveal-line">Tilek</span></span>
+                    <span class="line-wrap"><span class="reveal-line gradient-text">Mukashov</span></span>
+                </h1>
+
+                <div class="typewriter-wrap">
+                    <span class="mono tw-prefix">&gt; </span>
+                    <span class="typewriter" id="typewriter"></span>
+                    <span class="tw-cursor">|</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-num">10+</span>
-                    <span class="stat-label">Технологий</span>
+
+                <p class="hero-desc reveal-fade">
+                    Создаю высоконагруженные веб-приложения с нуля — от схемы базы данных до
+                    пиксельно точного интерфейса. Превращаю сложные идеи в живой код.
+                </p>
+
+                <div class="hero-btns reveal-fade">
+                    <a href="#projects" class="btn-main">
+                        <span class="btn-bg"></span>
+                        <span class="btn-label">Смотреть проекты</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn-outline">Связаться</a>
+                </div>
+
+                <div class="hero-stats reveal-fade">
+                    <div class="hstat">
+                        <span class="hstat-n" data-target="5">0</span><span class="hstat-plus">+</span>
+                        <span class="hstat-l">Проектов</span>
+                    </div>
+                    <div class="hstat-sep"></div>
+                    <div class="hstat">
+                        <span class="hstat-n" data-target="3">0</span><span class="hstat-plus">+</span>
+                        <span class="hstat-l">Года опыта</span>
+                    </div>
+                    <div class="hstat-sep"></div>
+                    <div class="hstat">
+                        <span class="hstat-n" data-target="10">0</span><span class="hstat-plus">+</span>
+                        <span class="hstat-l">Технологий</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right reveal-fade">
+                <div class="code-card">
+                    <div class="code-card-glow"></div>
+                    <div class="code-bar">
+                        <div class="code-dots">
+                            <span class="cd r"></span><span class="cd y"></span><span class="cd g"></span>
+                        </div>
+                        <span class="code-title mono">tilek.py</span>
+                        <span class="code-lang">Python</span>
+                    </div>
+                    <pre class="code-pre" id="typedCode"></pre>
+                </div>
+
+                <div class="floating-tags">
+                    <span class="ftag" style="--d:0s">Python 🐍</span>
+                    <span class="ftag" style="--d:.4s">React ⚛️</span>
+                    <span class="ftag" style="--d:.8s">Django 🟢</span>
+                    <span class="ftag" style="--d:1.2s">PostgreSQL 🐘</span>
+                    <span class="ftag" style="--d:1.6s">REST API 🔌</span>
                 </div>
             </div>
         </div>
-        <div class="hero-code">
-            <div class="code-window">
-                <div class="code-topbar">
-                    <span class="code-dot red"></span>
-                    <span class="code-dot yellow"></span>
-                    <span class="code-dot green"></span>
-                    <span class="code-filename">tilek.py</span>
-                </div>
-                <pre class="code-body"><span class="kw">class</span> <span class="cl">Developer</span>:
-    name  <span class="op">=</span> <span class="str">"Tilek Mukashov"</span>
-    role  <span class="op">=</span> <span class="str">"Fullstack Developer"</span>
-    city  <span class="op">=</span> <span class="str">"Bishkek, KG"</span>
 
-    skills <span class="op">=</span> [
-        <span class="str">"Python"</span>, <span class="str">"Django"</span>,
-        <span class="str">"JavaScript"</span>, <span class="str">"React"</span>,
-        <span class="str">"PostgreSQL"</span>, <span class="str">"REST API"</span>,
-    ]
-
-    <span class="kw">def</span> <span class="fn">build</span>(self, idea):
-        <span class="kw">return</span> idea <span class="op">+</span> <span class="str">" → production ✓"</span></pre>
-            </div>
+        <div class="scroll-hint">
+            <span class="mono" style="font-size:.7rem;opacity:.4">scroll</span>
+            <div class="scroll-line"></div>
         </div>
-    </header>
+    </section>
 
-    <!-- ========= PROJECTS ========= -->
+    <!-- ===================== PROJECTS ===================== -->
     <section class="section" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-eyebrow">/ projects</span>
-                <h2 class="section-title">Мои проекты</h2>
-                <p class="section-sub">Реальные продукты, которые я спроектировал, разработал и задеплоил</p>
+        <div class="section-inner">
+            <div class="section-head">
+                <span class="eyebrow mono">01 / projects</span>
+                <h2 class="sec-title">Мои проекты</h2>
+                <p class="sec-sub">Реальные продукты, которые я спроектировал, разработал и задеплоил</p>
             </div>
 
-            <div class="projects-grid">
+            <div class="proj-grid">
 
-                <article class="project-card featured">
-                    <div class="project-glow"></div>
-                    <div class="project-top">
-                        <div class="project-icon">🎓</div>
-                        <div class="project-links">
-                            <a href="#" class="icon-btn" title="GitHub" aria-label="GitHub">
-                                <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                <article class="pcard pcard--featured" data-tilt>
+                    <div class="pcard-border"></div>
+                    <div class="pcard-glow"></div>
+                    <div class="pcard-top">
+                        <div class="pcard-num mono">01</div>
+                        <div class="pcard-actions">
+                            <a href="#" class="gh-btn" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
                                     <path
                                         d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
                                 </svg>
                             </a>
                         </div>
                     </div>
-                    <h3 class="project-name">Дипломная веб-платформа</h3>
-                    <p class="project-desc">
-                        Полноценная веб-платформа с ролевой системой пользователей, REST API и административной панелью.
-                        Спроектировал реляционную БД, реализовал JWT-аутентификацию и развернул приложение на сервере.
-                    </p>
-                    <div class="project-stack">
-                        <span>Python</span><span>Django</span><span>PostgreSQL</span><span>REST
-                            API</span><span>JWT</span>
+                    <h3 class="pcard-name">Дипломная веб-платформа</h3>
+                    <p class="pcard-desc">Полноценная платформа с ролевой системой, JWT-аутентификацией и REST API.
+                        Спроектировал реляционную БД и развернул на сервере.</p>
+                    <div class="pcard-stack">
+                        <span>Python</span><span>Django</span><span>PostgreSQL</span><span>JWT</span><span>REST
+                            API</span>
                     </div>
-                    <div class="project-badges">
-                        <span class="badge-feat">⭐ Featured</span>
-                        <span class="badge-status live">● Live</span>
+                    <div class="pcard-footer">
+                        <span class="tag-featured">⭐ Featured</span>
+                        <span class="tag-live">● Live</span>
                     </div>
                 </article>
 
-                <article class="project-card">
-                    <div class="project-top">
-                        <div class="project-icon">🤖</div>
-                        <a href="#" class="icon-btn" title="GitHub" aria-label="GitHub">
-                            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                <article class="pcard" data-tilt>
+                    <div class="pcard-border"></div>
+                    <div class="pcard-top">
+                        <div class="pcard-num mono">02</div>
+                        <a href="#" class="gh-btn" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                            </svg>
-                        </a>
+                            </svg></a>
                     </div>
-                    <h3 class="project-name">AI-ассистент с LLM</h3>
-                    <p class="project-desc">
-                        Веб-приложение с интеграцией OpenAI API: чат-интерфейс, стриминг ответов, история диалогов.
-                        Серверная обработка промтов, управление контекстом и оптимизация токенов.
-                    </p>
-                    <div class="project-stack">
-                        <span>Python</span><span>Django</span><span>OpenAI
-                            API</span><span>JavaScript</span><span>WebSocket</span>
-                    </div>
-                    <div class="project-badges">
-                        <span class="badge-status live">● Live</span>
-                    </div>
+                    <h3 class="pcard-name">AI-ассистент с LLM</h3>
+                    <p class="pcard-desc">Чат с интеграцией OpenAI API: стриминг ответов, история диалогов, управление
+                        контекстом и оптимизация токенов на бэкенде.</p>
+                    <div class="pcard-stack"><span>Django</span><span>OpenAI
+                            API</span><span>WebSocket</span><span>JS</span></div>
+                    <div class="pcard-footer"><span class="tag-live">● Live</span></div>
                 </article>
 
-                <article class="project-card">
-                    <div class="project-top">
-                        <div class="project-icon">🛒</div>
-                        <a href="#" class="icon-btn" title="GitHub" aria-label="GitHub">
-                            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                <article class="pcard" data-tilt>
+                    <div class="pcard-border"></div>
+                    <div class="pcard-top">
+                        <div class="pcard-num mono">03</div>
+                        <a href="#" class="gh-btn" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                            </svg>
-                        </a>
+                            </svg></a>
                     </div>
-                    <h3 class="project-name">E-commerce платформа</h3>
-                    <p class="project-desc">
-                        Интернет-магазин с каталогом товаров, корзиной и управлением заказами.
-                        Фильтрация, поиск и пагинация через Django ORM и Ajax.
-                    </p>
-                    <div class="project-stack">
-                        <span>Django</span><span>SQLite</span><span>JavaScript</span><span>Ajax</span>
-                    </div>
-                    <div class="project-badges">
-                        <span class="badge-status live">● Live</span>
-                    </div>
+                    <h3 class="pcard-name">E-commerce платформа</h3>
+                    <p class="pcard-desc">Интернет-магазин с каталогом, корзиной, поиском и Ajax-фильтрацией.
+                        ORM-запросы оптимизированы через select_related и prefetch.</p>
+                    <div class="pcard-stack">
+                        <span>Django</span><span>SQLite</span><span>JavaScript</span><span>Ajax</span></div>
+                    <div class="pcard-footer"><span class="tag-live">● Live</span></div>
                 </article>
 
-                <article class="project-card">
-                    <div class="project-top">
-                        <div class="project-icon">✅</div>
-                        <a href="#" class="icon-btn" title="GitHub" aria-label="GitHub">
-                            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                <article class="pcard" data-tilt>
+                    <div class="pcard-border"></div>
+                    <div class="pcard-top">
+                        <div class="pcard-num mono">04</div>
+                        <a href="#" class="gh-btn" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                            </svg>
-                        </a>
+                            </svg></a>
                     </div>
-                    <h3 class="project-name">Task Manager — Kanban</h3>
-                    <p class="project-desc">
-                        Командный таск-менеджер: создание задач, назначение исполнителей, дедлайны, Kanban-доска.
-                        Авторизация и разграничение прав через Django auth.
-                    </p>
-                    <div class="project-stack">
-                        <span>Python</span><span>Django</span><span>JavaScript</span><span>SQLite</span>
-                    </div>
-                    <div class="project-badges">
-                        <span class="badge-status wip">◐ In Progress</span>
-                    </div>
+                    <h3 class="pcard-name">Task Manager — Kanban</h3>
+                    <p class="pcard-desc">Командный таск-менеджер с Kanban-доской. Назначение исполнителей, дедлайны и
+                        ролевые права доступа через Django auth.</p>
+                    <div class="pcard-stack">
+                        <span>Python</span><span>Django</span><span>JavaScript</span><span>SQLite</span></div>
+                    <div class="pcard-footer"><span class="tag-wip">◐ In Progress</span></div>
                 </article>
 
-                <article class="project-card">
-                    <div class="project-top">
-                        <div class="project-icon">💼</div>
-                        <a href="#" class="icon-btn" title="GitHub" aria-label="GitHub">
-                            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                <article class="pcard" data-tilt>
+                    <div class="pcard-border"></div>
+                    <div class="pcard-top">
+                        <div class="pcard-num mono">05</div>
+                        <a href="https://github.com/mercurievs/cv" target="_blank" rel="noopener" class="gh-btn"
+                            aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                            </svg>
-                        </a>
+                            </svg></a>
                     </div>
-                    <h3 class="project-name">Portfolio — этот сайт</h3>
-                    <p class="project-desc">
-                        Персональный сайт-портфолио с тёмным дизайном, glassmorphism-эффектами и CSS-анимациями.
-                        Без фреймворков — чистый HTML и CSS. Деплой через GitHub Pages.
-                    </p>
-                    <div class="project-stack">
-                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>GitHub Pages</span>
-                    </div>
-                    <div class="project-badges">
-                        <span class="badge-status live">● Live</span>
-                    </div>
+                    <h3 class="pcard-name">Portfolio — этот сайт</h3>
+                    <p class="pcard-desc">Персональный сайт с particle-анимацией, typewriter-эффектом, scroll-reveal и
+                        3D tilt-картами. Чистый HTML + CSS + JS.</p>
+                    <div class="pcard-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>GitHub
+                            Pages</span></div>
+                    <div class="pcard-footer"><span class="tag-live">● Live</span></div>
                 </article>
 
             </div>
         </div>
     </section>
 
-    <!-- ========= SKILLS ========= -->
-    <section class="section section--alt" id="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-eyebrow">/ skills</span>
-                <h2 class="section-title">Технический стек</h2>
-                <p class="section-sub">Технологии, с которыми я работаю каждый день</p>
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section section--dark" id="skills">
+        <div class="section-inner">
+            <div class="section-head">
+                <span class="eyebrow mono">02 / skills</span>
+                <h2 class="sec-title">Технический стек</h2>
+                <p class="sec-sub">Технологии, которыми я владею уверенно</p>
             </div>
 
-            <div class="skills-grid">
-
-                <div class="skill-category">
-                    <h3><span class="skill-cat-icon">⚙️</span> Backend</h3>
-                    <ul>
-                        <li><span class="skill-name">Python</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="--w:92%"></div>
-                            </div><span class="skill-pct">92%</span>
-                        </li>
-                        <li><span class="skill-name">Django</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="--w:88%"></div>
-                            </div><span class="skill-pct">88%</span>
-                        </li>
-                        <li><span class="skill-name">REST API</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="--w:85%"></div>
-                            </div><span class="skill-pct">85%</span>
-                        </li>
-                        <li><span class="skill-name">PostgreSQL</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="--w:82%"></div>
-                            </div><span class="skill-pct">82%</span>
-                        </li>
-                    </ul>
+            <div class="skills-wrap">
+                <div class="skills-col">
+                    <div class="skill-group-card">
+                        <h3 class="sgroup-title"><span>⚙️</span> Backend</h3>
+                        <div class="skill-rows" id="sg-backend">
+                            <div class="srow"><span class="sname">Python</span>
+                                <div class="strack">
+                                    <div class="sfill" data-w="92"></div>
+                                </div><span class="spct">92%</span>
+                            </div>
+                            <div class="srow"><span class="sname">Django</span>
+                                <div class="strack">
+                                    <div class="sfill" data-w="88"></div>
+                                </div><span class="spct">88%</span>
+                            </div>
+                            <div class="srow"><span class="sname">REST API</span>
+                                <div class="strack">
+                                    <div class="sfill" data-w="85"></div>
+                                </div><span class="spct">85%</span>
+                            </div>
+                            <div class="srow"><span class="sname">PostgreSQL</span>
+                                <div class="strack">
+                                    <div class="sfill" data-w="82"></div>
+                                </div><span class="spct">82%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-group-card">
+                        <h3 class="sgroup-title"><span>🎨</span> Frontend</h3>
+                        <div class="skill-rows" id="sg-frontend">
+                            <div class="srow"><span class="sname">HTML / CSS</span>
+                                <div class="strack">
+                                    <div class="sfill" data-w="90"></div>
+                                </div><span class="spct">90%</span>
+                            </div>
+                            <div class="srow"><span class="sname">JavaScript</span>
+                                <div class="strack">
+                                    <div class="sfill" data-w="82"></div>
+                                </div><span class="spct">82%</span>
+                            </div>
+                            <div class="srow"><span class="sname">React</span>
+                                <div class="strack">
+                                    <div class="sfill" data-w="72"></div>
+                                </div><span class="spct">72%</span>
+                            </div>
+                            <div class="srow"><span class="sname">UI / Adaptive</span>
+                                <div class="strack">
+                                    <div class="sfill" data-w="90"></div>
+                                </div><span class="spct">90%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-group-card">
+                        <h3 class="sgroup-title"><span>🛠️</span> DevOps & Tools</h3>
+                        <div class="skill-rows" id="sg-tools">
+                            <div class="srow"><span class="sname">Git / GitHub</span>
+                                <div class="strack">
+                                    <div class="sfill" data-w="90"></div>
+                                </div><span class="spct">90%</span>
+                            </div>
+                            <div class="srow"><span class="sname">Docker</span>
+                                <div class="strack">
+                                    <div class="sfill" data-w="65"></div>
+                                </div><span class="spct">65%</span>
+                            </div>
+                            <div class="srow"><span class="sname">Linux / CLI</span>
+                                <div class="strack">
+                                    <div class="sfill" data-w="75"></div>
+                                </div><span class="spct">75%</span>
+                            </div>
+                            <div class="srow"><span class="sname">CI / GitHub Pages</span>
+                                <div class="strack">
+                                    <div class="sfill" data-w="80"></div>
+                                </div><span class="spct">80%</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3><span class="skill-cat-icon">🎨</span> Frontend</h3>
-                    <ul>
-                        <li><span class="skill-name">HTML / CSS</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="--w:90%"></div>
-                            </div><span class="skill-pct">90%</span>
-                        </li>
-                        <li><span class="skill-name">JavaScript</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="--w:82%"></div>
-                            </div><span class="skill-pct">82%</span>
-                        </li>
-                        <li><span class="skill-name">React</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="--w:72%"></div>
-                            </div><span class="skill-pct">72%</span>
-                        </li>
-                        <li><span class="skill-name">UI / Adaptive</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="--w:88%"></div>
-                            </div><span class="skill-pct">88%</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3><span class="skill-cat-icon">🛠️</span> Tools & DevOps</h3>
-                    <ul>
-                        <li><span class="skill-name">Git / GitHub</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="--w:90%"></div>
-                            </div><span class="skill-pct">90%</span>
-                        </li>
-                        <li><span class="skill-name">Docker</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="--w:65%"></div>
-                            </div><span class="skill-pct">65%</span>
-                        </li>
-                        <li><span class="skill-name">GitHub Pages / CI</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="--w:80%"></div>
-                            </div><span class="skill-pct">80%</span>
-                        </li>
-                        <li><span class="skill-name">Linux / CLI</span>
-                            <div class="bar">
-                                <div class="bar-fill" style="--w:75%"></div>
-                            </div><span class="skill-pct">75%</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="tech-logos">
-                <div class="tech-item">
-                    <div class="tech-icon">🐍</div><span>Python</span>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🟢</div><span>Django</span>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🟡</div><span>JavaScript</span>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">⚛️</div><span>React</span>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🐘</div><span>PostgreSQL</span>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🔀</div><span>Git</span>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🐳</div><span>Docker</span>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🔌</div><span>REST API</span>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🐧</div><span>Linux</span>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🤖</div><span>OpenAI API</span>
+                <div class="tech-orbit">
+                    <div class="orbit-center">
+                        <span class="mono" style="font-size:.75rem;color:var(--a1)">stack</span>
+                    </div>
+                    <div class="orbit-ring ring1">
+                        <div class="orbit-item" style="--i:0"><span>🐍</span><small>Python</small></div>
+                        <div class="orbit-item" style="--i:1"><span>🟢</span><small>Django</small></div>
+                        <div class="orbit-item" style="--i:2"><span>⚛️</span><small>React</small></div>
+                        <div class="orbit-item" style="--i:3"><span>🐘</span><small>PgSQL</small></div>
+                    </div>
+                    <div class="orbit-ring ring2">
+                        <div class="orbit-item2" style="--i:0"><span>🟡</span><small>JS</small></div>
+                        <div class="orbit-item2" style="--i:1"><span>🐳</span><small>Docker</small></div>
+                        <div class="orbit-item2" style="--i:2"><span>🔀</span><small>Git</small></div>
+                        <div class="orbit-item2" style="--i:3"><span>🤖</span><small>OpenAI</small></div>
+                        <div class="orbit-item2" style="--i:4"><span>🔌</span><small>API</small></div>
+                        <div class="orbit-item2" style="--i:5"><span>🐧</span><small>Linux</small></div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- ========= CONTACT ========= -->
+    <!-- ===================== CONTACT ===================== -->
     <section class="section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-eyebrow">/ contact</span>
-                <h2 class="section-title">Давайте работать вместе</h2>
-                <p class="section-sub">Открыт для фриланса, full-time и интересных проектов</p>
+        <div class="section-inner">
+            <div class="section-head">
+                <span class="eyebrow mono">03 / contact</span>
+                <h2 class="sec-title">Давайте работать вместе</h2>
+                <p class="sec-sub">Открыт для фриланса, full-time и интересных проектов</p>
             </div>
-            <div class="contact-grid">
-                <a href="mailto:tilek@example.com" class="contact-card">
-                    <div class="contact-icon">✉️</div>
-                    <div>
-                        <p class="contact-type">Email</p>
-                        <p class="contact-value">tilek@example.com</p>
-                    </div>
+
+            <div class="contact-cards">
+                <a href="mailto:tilek@example.com" class="ccard reveal-card">
+                    <div class="ccard-icon">✉️</div>
+                    <div class="ccard-label">Email</div>
+                    <div class="ccard-val">tilek@example.com</div>
+                    <div class="ccard-arrow">→</div>
                 </a>
-                <a href="https://github.com/tilek-mukashov" target="_blank" rel="noopener" class="contact-card">
-                    <div class="contact-icon">🐙</div>
-                    <div>
-                        <p class="contact-type">GitHub</p>
-                        <p class="contact-value">github.com/tilek-mukashov</p>
-                    </div>
+                <a href="https://github.com/mercurievs" target="_blank" rel="noopener" class="ccard reveal-card">
+                    <div class="ccard-icon">🐙</div>
+                    <div class="ccard-label">GitHub</div>
+                    <div class="ccard-val">github.com/mercurievs</div>
+                    <div class="ccard-arrow">→</div>
                 </a>
-                <div class="contact-card">
-                    <div class="contact-icon">📍</div>
-                    <div>
-                        <p class="contact-type">Локация</p>
-                        <p class="contact-value">Бишкек, Кыргызстан</p>
-                    </div>
+                <div class="ccard reveal-card">
+                    <div class="ccard-icon">📍</div>
+                    <div class="ccard-label">Локация</div>
+                    <div class="ccard-val">Бишкек, Кыргызстан</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========= FOOTER ========= -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <span class="mono">tilek.dev</span>
-        <span>© 2026 Tilek Mukashov</span>
-        <span>Built with ❤️ &amp; pure CSS</span>
+        <div class="footer-line"></div>
+        <div class="footer-inner">
+            <span class="mono" style="color:var(--a1)">mercurievs.github.io/cv</span>
+            <span style="color:var(--muted);font-size:.8rem">© 2026 Tilek Mukashov — Built with pure HTML & CSS</span>
+            <a href="#hero" class="back-top" aria-label="Наверх">↑</a>
+        </div>
     </footer>
 
     <script>
-        // Animate skill bars on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.querySelectorAll('.bar-fill').forEach(b => b.classList.add('animate'));
-                }
+        /* ============ STARS CANVAS ============ */
+        (function () {
+            const c = document.getElementById('stars');
+            const ctx = c.getContext('2d');
+            let W, H, stars = [];
+            function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight; }
+            resize();
+            window.addEventListener('resize', resize);
+            for (let i = 0; i < 160; i++) stars.push({
+                x: Math.random() * 99999, y: Math.random() * 99999,
+                r: Math.random() * 1.2 + .2, a: Math.random(),
+                sp: Math.random() * .4 + .05, va: (Math.random() - .5) * .005
             });
-        }, { threshold: 0.3 });
-        document.querySelectorAll('.skill-category').forEach(el => observer.observe(el));
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                stars.forEach(s => {
+                    s.x += s.sp; s.a += s.va;
+                    if (s.a <= 0 || s.a >= 1) s.va *= -1;
+                    if (s.x > W) s.x = 0;
+                    ctx.beginPath();
+                    ctx.arc(s.x % W, s.y % H, s.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(148,163,184,${Math.max(0, Math.min(1, s.a))})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
 
-        // Nav active link
-        const sections = document.querySelectorAll('section[id], header[id]');
-        const navLinks = document.querySelectorAll('.nav-links a');
+        /* ============ CURSOR GLOW ============ */
+        const glow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', e => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        /* ============ NAV SCROLL ============ */
+        const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(s => {
-                if (window.scrollY >= s.offsetTop - 80) current = s.id;
-            });
-            navLinks.forEach(a => {
-                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-            });
+            nav.classList.toggle('scrolled', window.scrollY > 40);
         }, { passive: true });
 
-        // Cursor blink
-        setInterval(() => {
-            const c = document.querySelector('.nav-cursor');
-            if (c) c.style.opacity = c.style.opacity === '0' ? '1' : '0';
-        }, 600);
-    </script>
+        /* ============ TYPEWRITER ============ */
+        const phrases = [
+            'Fullstack Developer',
+            'Python / Django Expert',
+            'React Developer',
+            'API Architect',
+            'UI Craftsman',
+        ];
+        let pi = 0, ci = 0, del = false, tw = document.getElementById('typewriter');
+        function type() {
+            const word = phrases[pi];
+            if (!del) {
+                tw.textContent = word.slice(0, ++ci);
+                if (ci === word.length) { del = true; setTimeout(type, 1800); return; }
+            } else {
+                tw.textContent = word.slice(0, --ci);
+                if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
+            }
+            setTimeout(type, del ? 55 : 90);
+        }
+        setTimeout(type, 800);
 
+        /* ============ CODE TYPING ============ */
+        const code = [
+            { t: 'kw', v: 'class ' }, { t: 'cl', v: 'Developer' },
+            { t: 'op', v: ':\n    ' }, { t: 'n', v: 'name  = ' }, { t: 'st', v: '"Tilek Mukashov"' },
+            { t: 'op', v: '\n    ' }, { t: 'n', v: 'role  = ' }, { t: 'st', v: '"Fullstack Dev"' },
+            { t: 'op', v: '\n    ' }, { t: 'n', v: 'city  = ' }, { t: 'st', v: '"Bishkek, KG"' },
+            { t: 'op', v: '\n\n    ' }, { t: 'kw', v: 'def ' }, { t: 'fn', v: 'build' },
+            { t: 'op', v: '(self, idea):\n        ' }, { t: 'kw', v: 'return ' },
+            { t: 'n', v: 'idea ' }, { t: 'op', v: '+ ' }, { t: 'st', v: '" → prod ✓"' },
+        ];
+        const el = document.getElementById('typedCode');
+        let ci2 = 0, ti = 0;
+        const colors = { kw: '#c084fc', cl: '#67e8f9', fn: '#6ee7b7', st: '#86efac', op: '#94a3b8', n: '#e2e8f0' };
+        function typeCode() {
+            if (ti >= code.length) return;
+            const tok = code[ti]; const full = tok.v;
+            if (ci2 < full.length) {
+                const span = el.querySelector(`[data-ti="${ti}"]`);
+                if (!span) {
+                    const s = document.createElement('span');
+                    s.style.color = colors[tok.t] || '#e2e8f0';
+                    s.dataset.ti = ti;
+                    el.appendChild(s);
+                }
+                el.querySelector(`[data-ti="${ti}"]`).textContent = full.slice(0, ++ci2);
+                setTimeout(typeCode, 28);
+            } else { ti++; ci2 = 0; setTimeout(typeCode, 10); }
+        }
+        setTimeout(typeCode, 400);
+
+        /* ============ SCROLL REVEAL ============ */
+        const revealObs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+        }, { threshold: .15 });
+        document.querySelectorAll('.pcard,.skill-group-card,.ccard,.reveal-card').forEach(el => revealObs.observe(el));
+
+        /* ============ SKILL BARS ============ */
+        const barObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.querySelectorAll('.sfill').forEach(b => {
+                        b.style.width = b.dataset.w + '%';
+                    });
+                }
+            });
+        }, { threshold: .3 });
+        document.querySelectorAll('.skill-rows').forEach(el => barObs.observe(el));
+
+        /* ============ COUNTER ============ */
+        const cntObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.querySelectorAll('.hstat-n').forEach(el => {
+                        const target = +el.dataset.target, dur = 1200, step = 16;
+                        let cur = 0;
+                        const inc = () => { cur = Math.min(cur + target / (dur / step), target); el.textContent = Math.round(cur); if (cur < target) setTimeout(inc, step); };
+                        inc();
+                    });
+                    cntObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: .5 });
+        const statsEl = document.querySelector('.hero-stats');
+        if (statsEl) cntObs.observe(statsEl);
+
+        /* ============ 3D TILT ============ */
+        document.querySelectorAll('[data-tilt]').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const r = card.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width - .5;
+                const y = (e.clientY - r.top) / r.height - .5;
+                card.style.transform = `perspective(600px) rotateY(${x * 12}deg) rotateX(${-y * 10}deg) translateY(-6px)`;
+            });
+            card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+        });
+
+        /* ============ NAV ACTIVE ============ */
+        const secs = document.querySelectorAll('section[id]');
+        const navAs = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let cur = '';
+            secs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+            navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+        }, { passive: true });
+    </script>
 </body>
 
 </html>
